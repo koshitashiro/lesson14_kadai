@@ -29,7 +29,7 @@ import javax.persistence.Table;
 @Entity
 public class Report {
     @Id
-    @Column(name = "employee_id", nullable = false)
+    @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
@@ -49,6 +49,10 @@ public class Report {
 
     @Column(name = "created_at", nullable = false)
     private Timestamp created_at;
+
+    @Column(name = "updated_at", nullable = false)
+    private Timestamp updated_at;
+
 
     public Integer getId() {
         return id;
@@ -105,9 +109,5 @@ public class Report {
     public void setUpdated_at(Timestamp updated_at) {
         this.updated_at = updated_at;
     }
-
-    @Column(name = "updated_at", nullable = false)
-    private Timestamp updated_at;
-
 
 }
